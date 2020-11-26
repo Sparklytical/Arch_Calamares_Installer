@@ -361,4 +361,5 @@ solid
 
 
 # AUR-support
-yay
+yay-bin
+pamac-aur
