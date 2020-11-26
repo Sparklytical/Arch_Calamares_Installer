@@ -1,0 +1,36 @@
+- Enable NetworkManager:
+Symbolic link to NetworkManager.service located at /etc/systemd/system/multi-user.target.wants/
+
+- DNS (systemd-resolved):
+Symbolic link to systemd-resolved located at /etc/systemd/system/multi-user.target.wants/
+
+- Default graphical target:
+Nothing needed to be done, it goes straight to the login page.
+
+- The ISO name, label, etc. that where on the build.sh script are now on the file called profiledef.sh,
+the file was added with one of the updates to archiso.
+
+- User, password and groups:
+Automated in steps.sh. You can change the variables of the username, password for the regular user, and password for root
+in steps.sh.
+
+- Localization:
+You can customize your keyboard layout inside the script. It creates vconsole.conf and xorg conf file.
+
+For the language you can use the locale.gen file in the template, i created a systemd service called localegen.service
+that executes a script that generates the locales on boot (localegen.sh, located at /usr/bin/).
+I don't know if that's the best way to do it, but it works.
+I tried it with spanish and english (both keymap and locale) and it seems to work fine.
+
+- Mirrorlist:
+The mirrorlist update command is in steps.sh
+
+- Sudo:
+I added the sudoers file with normal permission, so that i can create the zip file without root permission.
+It's permission gets updated when you run the steps.sh script.
+
+And lastly, the mkarchiso command is in steps.sh, it's the last command.
+The steps.sh script needs root permission, to copy the sudoers file and to execute mkarchiso.
+
+I tested it with different languages, different user and password and it seems to work fine, but im sure it needs more
+testing. Sorry if i made any mistakes writing, english is not my native language.
