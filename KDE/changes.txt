@@ -4,9 +4,6 @@ Symbolic link to NetworkManager.service located at /etc/systemd/system/multi-use
 - DNS (systemd-resolved):
 Symbolic link to systemd-resolved located at /etc/systemd/system/multi-user.target.wants/
 
-- lightdm:
-Symbolic link to lightdm.service localted at /etc/systemd/system/ named display-manager.service
-
 - Default graphical target:
 Nothing needed to be done, it goes straight to the login page.
 
@@ -31,8 +28,6 @@ The mirrorlist update command is in steps.sh
 - Sudo:
 I added the sudoers file with normal permission, so that i can create the zip file without root permission.
 It's permission gets updated when you run the steps.sh script.
-It's configured so that sudo asks for the root password instead of the user password.
-https://wiki.archlinux.org/index.php/Sudo#Root_password
 
 And lastly, the mkarchiso command is in steps.sh, it's the last command.
 The steps.sh script needs root permission, to copy the sudoers file and to execute mkarchiso.

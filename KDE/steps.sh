@@ -7,14 +7,14 @@ sleep 2
 cp -r /usr/share/archiso/configs/releng/ ./
 
 #Delete automatic login and default network configuration
-[[ -d ./releng/airootfs/etc/systemd/system/getty@tty1.service.d ]] && rm -r ./releng/airootfs/etc/systemd/system/getty@tty1.service.d
-[[ -d ./releng/airootfs/etc/systemd/network ]] && rm -r ./releng/airootfs/etc/systemd/network
-[[ -d ./releng/airootfs/etc/systemd/system/systemd-networkd-wait-online.service.d ]] && rm -r ./releng/airootfs/etc/systemd/system/systemd-networkd-wait-online.service.d
-[[ -f ./releng/airootfs/etc/systemd/system/dbus-org.freedesktop.network1.service ]] && rm ./releng/airootfs/etc/systemd/system/dbus-org.freedesktop.network1.service
-[[ -f ./releng/airootfs/etc/systemd/system/multi-user.target.wants/systemd-networkd.service ]] && rm ./releng/airootfs/etc/systemd/system/multi-user.target.wants/systemd-networkd.service
-[[ -f ./releng/airootfs/etc/systemd/system/multi-user.target.wants/iwd.service ]] && rm ./releng/airootfs/etc/systemd/system/multi-user.target.wants/iwd.service
-[[ -f ./releng/airootfs/etc/systemd/system/sockets.target.wants/systemd-networkd.socket ]] && rm ./releng/airootfs/etc/systemd/system/sockets.target.wants/systemd-networkd.socket
-[[ -f ./releng/airootfs/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service ]] && rm ./releng/airootfs/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service
+# [[ -d ./releng/airootfs/etc/systemd/system/getty@tty1.service.d ]] && rm -r ./releng/airootfs/etc/systemd/system/getty@tty1.service.d
+# [[ -d ./releng/airootfs/etc/systemd/network ]] && rm -r ./releng/airootfs/etc/systemd/network
+# [[ -d ./releng/airootfs/etc/systemd/system/systemd-networkd-wait-online.service.d ]] && rm -r ./releng/airootfs/etc/systemd/system/systemd-networkd-wait-online.service.d
+# [[ -f ./releng/airootfs/etc/systemd/system/dbus-org.freedesktop.network1.service ]] && rm ./releng/airootfs/etc/systemd/system/dbus-org.freedesktop.network1.service
+# [[ -f ./releng/airootfs/etc/systemd/system/multi-user.target.wants/systemd-networkd.service ]] && rm ./releng/airootfs/etc/systemd/system/multi-user.target.wants/systemd-networkd.service
+# [[ -f ./releng/airootfs/etc/systemd/system/multi-user.target.wants/iwd.service ]] && rm ./releng/airootfs/etc/systemd/system/multi-user.target.wants/iwd.service
+# [[ -f ./releng/airootfs/etc/systemd/system/sockets.target.wants/systemd-networkd.socket ]] && rm ./releng/airootfs/etc/systemd/system/sockets.target.wants/systemd-networkd.socket
+# [[ -f ./releng/airootfs/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service ]] && rm ./releng/airootfs/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service
 
 #Delete customize_airootfs.sh, it's not needed anymore.
 [[ -f ./releng/airootfs/root/customize_airootfs.sh ]] && rm ./releng/airootfs/root/customize_airootfs.sh
@@ -30,18 +30,13 @@ cp -r usr ./releng/airootfs/
 
 cp -r etc ./releng/airootfs/
 
-[[ -d lightdm ]] && cp -r lightdm ./releng/airootfs/etc/
 
-[[ -d xfce4 ]] && mkdir -p ./releng/airootfs/etc/skel/.config
-
-[[ -d xfce4 ]] && cp -r xfce4 ./releng/airootfs/etc/skel/.config/
-
-echo "ezarcher" > ./releng/airootfs/etc/hostname
+echo "spark" > ./releng/airootfs/etc/hostname
 
 #Set username, user password and root password
 usr_name="live"
 usr_pass="live"
-root_pass="toor"
+root_pass="root"
 
 #passwd
 echo "${usr_name}:x:1010:1010::/home/${usr_name}:/bin/bash" >> ./releng/airootfs/etc/passwd
@@ -59,7 +54,7 @@ ${usr_name}::1010:" > ./releng/airootfs/etc/group
 
 #shadow
 usr_hash=$(openssl passwd -6 "${usr_pass}")
-root_hash=$(openssl passwd -6 "${root_pass}")
+root_hash=$(openssl passwd -6 "${usr_pass}")
 echo "root:${root_hash}:18517:0:99999:7:::
 ${usr_name}:${usr_hash}:18517:0:99999:7:::" > ./releng/airootfs/etc/shadow
 
