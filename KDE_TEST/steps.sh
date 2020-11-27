@@ -7,14 +7,14 @@ sleep 2
 cp -r /usr/share/archiso/configs/releng/ ./
 
 #Delete automatic login and default network configuration
-[[ -d ./releng/airootfs/etc/systemd/system/getty@tty1.service.d ]] && rm -r ./releng/airootfs/etc/systemd/system/getty@tty1.service.d
-[[ -d ./releng/airootfs/etc/systemd/network ]] && rm -r ./releng/airootfs/etc/systemd/network
-[[ -d ./releng/airootfs/etc/systemd/system/systemd-networkd-wait-online.service.d ]] && rm -r ./releng/airootfs/etc/systemd/system/systemd-networkd-wait-online.service.d
-[[ -f ./releng/airootfs/etc/systemd/system/dbus-org.freedesktop.network1.service ]] && rm ./releng/airootfs/etc/systemd/system/dbus-org.freedesktop.network1.service
-[[ -f ./releng/airootfs/etc/systemd/system/multi-user.target.wants/systemd-networkd.service ]] && rm ./releng/airootfs/etc/systemd/system/multi-user.target.wants/systemd-networkd.service
-[[ -f ./releng/airootfs/etc/systemd/system/multi-user.target.wants/iwd.service ]] && rm ./releng/airootfs/etc/systemd/system/multi-user.target.wants/iwd.service
-[[ -f ./releng/airootfs/etc/systemd/system/sockets.target.wants/systemd-networkd.socket ]] && rm ./releng/airootfs/etc/systemd/system/sockets.target.wants/systemd-networkd.socket
-[[ -f ./releng/airootfs/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service ]] && rm ./releng/airootfs/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service
+# [[ -d ./releng/airootfs/etc/systemd/system/getty@tty1.service.d ]] && rm -r ./releng/airootfs/etc/systemd/system/getty@tty1.service.d
+# [[ -d ./releng/airootfs/etc/systemd/network ]] && rm -r ./releng/airootfs/etc/systemd/network
+# [[ -d ./releng/airootfs/etc/systemd/system/systemd-networkd-wait-online.service.d ]] && rm -r ./releng/airootfs/etc/systemd/system/systemd-networkd-wait-online.service.d
+# [[ -f ./releng/airootfs/etc/systemd/system/dbus-org.freedesktop.network1.service ]] && rm ./releng/airootfs/etc/systemd/system/dbus-org.freedesktop.network1.service
+# [[ -f ./releng/airootfs/etc/systemd/system/multi-user.target.wants/systemd-networkd.service ]] && rm ./releng/airootfs/etc/systemd/system/multi-user.target.wants/systemd-networkd.service
+# [[ -f ./releng/airootfs/etc/systemd/system/multi-user.target.wants/iwd.service ]] && rm ./releng/airootfs/etc/systemd/system/multi-user.target.wants/iwd.service
+# [[ -f ./releng/airootfs/etc/systemd/system/sockets.target.wants/systemd-networkd.socket ]] && rm ./releng/airootfs/etc/systemd/system/sockets.target.wants/systemd-networkd.socket
+# [[ -f ./releng/airootfs/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service ]] && rm ./releng/airootfs/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service
 
 #Delete customize_airootfs.sh, it's not needed anymore.
 [[ -f ./releng/airootfs/root/customize_airootfs.sh ]] && rm ./releng/airootfs/root/customize_airootfs.sh

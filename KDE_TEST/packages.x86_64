@@ -8,7 +8,6 @@ edk2-shell
 grml-zsh-config
 irssi
 kitty-terminfo
-lftp
 lynx
 memtest86+
 nbd
@@ -102,7 +101,7 @@ dkms
 linux-firmware
 
 # default.browser.endeavour
-firefox
+firefox-developer-edition
 # fonts
 ttf-dejavu
 ttf-liberation
@@ -154,7 +153,6 @@ hwdetect
 hwinfo
 ntp
 os-prober
-grub-tools
 
 # system.packages
 expect
@@ -208,7 +206,6 @@ whois
 wireless_tools
 dhclient
 dnsmasq
-elinks
 ethtool
 openconnect
 openssh
@@ -250,27 +247,27 @@ xcompmgr
 
 #
 # Generic stuff, need to delete stuff from here
-brltty
-ddrescue
-espeakup
-exfatprogs
-fsarchiver
-hdparm
-livecd-sounds
-lsscsi
-mc
-partclone
-partimage
-pptpclient
-sdparm
-sg3_utils
-smartmontools
-squashfs-tools
-tcpdump
-testdisk
-udftools
-usb_modeswitch
-usbutils
+#brltty
+#ddrescue
+#espeakup
+#exfatprogs
+#fsarchiver
+#hdparm
+#livecd-sounds
+#lsscsi
+#mc
+#partclone
+#partimage
+#pptpclient
+#sdparm
+#sg3_utils
+#smartmontools
+#squashfs-tools
+#tcpdump
+#testdisk
+#udftools
+#usb_modeswitch
+#usbutils
 
 
 # Multimedia
@@ -294,11 +291,9 @@ youtube-dl
 
 # Networking
 curl
-filezilla
 gnome-nettool
 nm-connection-editor
 network-manager-applet
-openresolv
 wget
 
 
@@ -308,7 +303,14 @@ meld
 neofetch
 papirus-icon-theme
 
-
+#Compile stuff
+kitty
+pbzip2
+zstd
+lrzip
+lzop
+lzip
+ccache
 
 # KDE
 ark
@@ -316,6 +318,7 @@ breeze-icons
 dolphin
 elisa
 konsole
+spectacle
 kate
 gwenview
 networkmanager-qt
@@ -323,7 +326,7 @@ okular
 pavucontrol-qt
 plasma
 qbittorrent
-spectacle
+pigz
 
 # calamares.dependencies
 boost
@@ -338,6 +341,15 @@ yaml-cpp
 hwinfo
 plasma-framework
 qt5-translations
+
+#temp
+wd719x
+aic94xx
+xhci_pci
+lantiq_gswip
+softing_cs
+noto-fonts-emoji
+noto-fonts-extra
 
 # calamares.welcome
 upower
